@@ -11,5 +11,5 @@
 	if($conn->connect_error){
 		die("connection failed:" .$conn->connect_error);
 	}
-	echo"<script>alert('Connected successfuly')</script>";
+	//echo"<script>alert('Connected successfuly')</script>";
 ?>

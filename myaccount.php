@@ -1,3 +1,6 @@
+<?php
+	include_once 'config.php'
+?>
 <!DOCTYPE html>
 <html>
 
@@ -8,8 +11,6 @@
     <!--CSS Linked-->
     <link rel="stylesheet" href="styles/style.css">
 	<link rel="stylesheet" href="styles/myaccount.css">
-	
-	<script src ="js/contact_us.js"></script>
 
 
 </head>
@@ -50,7 +51,7 @@
             <a href="apartments.html">Apartments</a>
             <a href="postAd.html">Selling</a>
             <a href="payplans.html">Payment Plans</a>
-            <a href="contact_us.php">Contact Us</a>
+            <a href="contact_me.php">Contact Us</a>
             <a class="active" href="#">My Account</a>
 
 
@@ -72,61 +73,82 @@
 	
 	<!--Type Code here-->
 	<section id="mainSlider">
+			<!--page Title and profile photo area-->
 			<div class="top_center">
 				
 				<h1 class ="topic">My Account</h1>
-						
+				
+				<!--profile photo area-->
 				<div class="profilephoto">
+					<!--add profile photo-->
 					<img src="images/myaccountprofile.png" alt="profile Image" width="250px" height="250px" >
 				</div>
 				
 			</div>
+			<!--end page Title and profile photo area-->
 			
+			<!--form area start-->
 			<div class="inner_box">
 			
+			<!--php code to retrieve data from firebase-->
 			<?php
 				
 					//$sql = "SELECT * FROM account where username = '$_SESSION[login_user]';";
-					$sql = "SELECT * FROM account where username = 1";
-					$q = mysql_query($conn,$sql);
 					
+					//sql query to retrieve data
+					$sql = "SELECT * FROM account where username = 1";
+					//create connection with database
+					$q = mysqli_query($conn,$sql);
 					$row = mysqli_fetch_assoc($q);
+					
+					//assign values to variables
+					$fname = $row["fullname"];
+					$email = $row["email"];
+					$phone = $row["phone"];
+					$address1 = $row["address1"];
+					$town = $row["town"];
+					$username = $row["username"];
+					$password = $row["password"];
 						
 			?>
 
-				
+				<!--start form-->
 				<form action = "updateAccount.php" method="post">
+				<!--add styles to input fields-->
 				<div class="box">
 
+					<!--input fields to display details and get user changes-->
 					<br>
 					<div class="formtext">Full Name</div>
-					<input type="text" id ="fname" name ="fname" value= "<?php echo $row[fullname]; ?>" required><br/><br>
+					<input type="text" id ="fname" name ="fname" value= "<?php echo $fname; ?>" required><br/><br>
 					<div class="formtext">Email</div>
-					<input type="email" id ="email1" name ="uemail" value= "<?php echo $row[email]; ?>" required><br/><br>
+					<input type="email" id ="email1" name ="email1" value= "<?php echo $email; ?>" required><br/><br>
 					<div class="formtext">Phone number</div>
-					<input type="tel" id ="phone" name ="pnumber" value= "<?php echo $row[phone]; ?>" required><br/><br>
+					<input type="tel" id ="phone" name ="phone" value= "<?php echo $phone; ?>" required><br/><br>
 					<div class="formtext">Address 1</div>
-					<input type="text" id ="address1" name ="address1" value= "<?php echo $row[address1]; ?>" required><br/><br>
+					<input type="text" id ="address1" name ="address1" value= "<?php echo $address1; ?>" required><br/><br>
 					<div class="formtext">City/Town</div>
-					<input type="text" id ="address2" name ="address2" value= "<?php echo $row[town]; ?>" required><br/><br><br/><br>
+					<input type="text" id ="address2" name ="address2" value= "<?php echo $town; ?>" required><br/><br><br/><br>
 					<div class="formtext">Username</div>
-					<input type="text" id ="username" name ="username" value= "<?php echo $row[username]; ?>" disabled><br/>
+					<input type="text" id ="username" name ="username" value= "<?php echo $username; ?>" readonly><br/>
 					<div class="formtext">password</div>
-					<input type="password" id ="password" name ="password" value= "<?php echo $row[password]; ?>" required><br/>
+					<input type="password" id ="password" name ="password" value= "<?php echo $password; ?>" required><br/>
 						
-					
+					<!--save changes button-->
 					<input class="submit_button" type="submit" id="submit1" name="submit1" value ="Save Changes">
+					<!--delete account button-->
 					<input class="reset_button" type="submit" id="submit2"   name="submit2" value ="Delete Acoount"><br/><br/>
 
 				</div>
 				</form>
-				
+				<!--end form-->
 				
 				
 			</div>
+			<!--form area end-->
 		
 	</section>
-	
+	<!--end main body part-->
 	
 	
 	
@@ -238,7 +260,5 @@
 </html>
 
 
-<?php
-	include_once 'config.php'
-?>
+
 

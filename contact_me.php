@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/style.css">
 	<link rel="stylesheet" href="styles/contact_me.css">
 	
+	<!--JS Linked-->
 	<script src ="js/contact_me.js"></script>
 
 
@@ -74,14 +75,18 @@
 	<section id="mainSlider">
 		<div class="allDiv">
 		
+			<!--page background image-->
 			<img src='images/contactusbackground.jpg' name="slide" id="slideimg"></a>
 			
+			<!--Title area-->
 			<div class="top_center">
 				<div id="mainTitle"> Contact me </div><br>
 			</div>
+			<!--Title area end-->
 			
-			
+			<!--start left box-->
 			<div class="top_left">
+				<!--hard coded details-->
 				<img src="images/locationi.png" width="70px" height="70px" id="logo"/>
 				<div id="mainHead">Address</div>
 				<p id="descriction"><br>New Door(pvt)Ltd,<br>
@@ -98,27 +103,36 @@
 				
 				
 			</div>
+			<!--end left box-->
 			
+			<!--start right box-->
 			<div class="top_right">
+				<!--start form-->
 				<form action = "submitContactUs.php" method="post">
+					<!--add styles to input fields-->
 					<div class="box">
 						<h1 class ="topic">Contact me...</h1><hr class="hline2"/>
 						
+						<!--input fields to get user inputs-->
 						<br><input type="text" id ="fname" name ="fname" placeholder="Full name" required><br/><br>
 						<input type="email" id ="email1" name ="uemail" placeholder="Email" required><br/><br>
 						<input type="tel" id ="phone" name ="pnumber" placeholder="Phone number" required><br/><br>
 						<textarea id="message" name="message" rows="4" cols="50" placeholder="Type your Message..."></textarea><br/><br>
 						
+						<!--buttons-->
 						<center><input type="checkbox" id ="check1" onClick="enableButton()" > I'm not a robot<br/><br/></center>
 						<center><input class="submit_button" type="submit" id="submit1"  value ="Contact me" disabled>
 						<input class="reset_button" type="reset" id="reg_clear" value ="Clear"></center><br/><br/>
 					</div>
 				</form>
+				<!--end form-->
 			</div>
+			<!--end right box-->
 		
 		
 		</div>
 	</section>
+	<!--end main body part-->
 	
 	
 	
