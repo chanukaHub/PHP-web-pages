@@ -1,12 +1,12 @@
+<!--linked config file-->
 <?php
 	include_once 'config.php'
 ?>
 
+<!--php code to insert contact details to database-->
 <?php
 	
 	//Escape user inputs for security
-	
-	
 	$fName = $_POST["fname"];
 	$number = $_POST["pnumber"];
 	$email = $_POST["uemail"];
@@ -16,8 +16,6 @@
 	
 		
 	//Attemt insert query execution
-	
-	
 	$sql ="INSERT INTO contact(contact_id,name,number,email,message,date)VALUES('','$fName','$number','$email','$message','$c')";
 	
 

@@ -1,13 +1,15 @@
 @charset 'utf-8';
+/* import google fonts */
 @import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Alata&display=swap');
 
+/* set min-width to body area */
 body {
   max-height: 200px;
   min-width: 1250px;
 }
 
-
+/* main area */
 #mainSlider{
 	min-width: 40%;
 	width: 100%;
@@ -15,6 +17,7 @@ body {
 	overflow: hidden;
 }
 
+/* inner main area */
 .allDiv{
 	display:block;
 	margin:auto;
@@ -22,7 +25,7 @@ body {
 	width:100%;
 }
 
-
+/* backgroun image */
 #slideimg{
 	width:100%;
 	min-width:60%;
@@ -30,7 +33,7 @@ body {
 	filter: brightness(0.2);
 }
 
-
+/* title area */
 .top_center{
 	position:absolute;
 	top:5%;
@@ -38,6 +41,7 @@ body {
 	float:left;
 }
 
+/* title styles */
 #mainTitle{
 	float:center;
 	color:white;
@@ -49,6 +53,7 @@ body {
 		
 }
 
+/* details area */
 .top_left{
 	position:absolute;
 	width: 45%;
@@ -60,11 +65,12 @@ body {
     display: block;
 }
 
-
+/* logo icons */
 #logo{
 	float:left;
 }
 
+/* title styles for logo icons */
 #mainHead{
 	color:#40E0D0;
 	float:left;
@@ -75,6 +81,7 @@ body {
 	font-weight: bold;
 }
 
+/* description styles for logo icons */
 #descriction{
 	color:white;
 	font-size:20px;
@@ -82,7 +89,7 @@ body {
 	padding-left:90px;
 }
 
-
+/* form area */
 .top_right{
 	position:absolute;
 	border-radius: 0.5rem; 
@@ -96,6 +103,7 @@ body {
 	background-color:#E2E1E1;
 }
 
+/* styles for input fields */
   .box input[type=text] ,.box input[type=tel],.box input[type=email]{
     width: 85%;
     padding: 12px;
@@ -106,7 +114,7 @@ body {
     font-size: 20px;
   }
 
-
+/* styles for input fields topic*/
 .topic{
     color: black;
     font-family:sans-serif,'Arial Narrow Bold';
@@ -114,11 +122,13 @@ body {
 
 }
 
+/* styles for horizontal line*/
 .hline2{
     width: 90%;
     color: black;
 }
 
+/* styles for textarea*/
 textarea {
 	outline: none;
 	resize: none;
@@ -130,6 +140,8 @@ textarea {
     margin-right:5%; 
     font-size: 20px;
 }
+
+/* styles for reset button*/
 .reset_button {
     background-color: #FFC733; 
     border: none;
@@ -143,6 +155,7 @@ textarea {
     
   }
 
+/* styles for submit button*/
   .submit_button {
     background-color: #68EA1D; 
     border: none;
